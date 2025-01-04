@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CoordFlow</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro&display=swap">
+  <link rel="icon" href="buttons/web_logo3.png">
+
+  <style>
+
+
+    .image-item {
+      display: flex; /* Use flexbox for better alignment */
+      flex-direction: column; /* Ensure the image and text stack vertically */
+      align-items: center; /* Center-align the content horizontally */
+      justify-content: space-between; /* Ensure uniform spacing between image and text */
+      width: 70px; /* Set a fixed width for uniformity */
+      height: 100px; /* Set a fixed height to align buttons */
+      text-align: center; /* Center-align the text */
+    }
+
+
+    body {
+      background-color: rgb(245, 245, 245);
+      color: rgb(49, 48, 48);
+      font-family: 'Google Sans', sans-serif; /* Specific font for headers */
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      padding: 50px 0;
+      box-sizing: border-box;
+    }
+
+    .main-container {
+      padding: 15px;
+      background-color: rgb(245, 245, 245);
+      max-width: 84%;
+      box-sizing: border-box;
+      margin-top: 50px;
+      align-items: center; /* This will center all children */
+    }
+
+    h1 {
+      font-family: 'Google Sans', sans-serif; /* Specific font for headers */
+      font-size: 56px;
+      line-height: 1.2;
+      margin-bottom: -18px;
+      margin-top: 0;
+    }
+
+    h2 {
+      font-family: 'Google Sans', sans-serif; /* Specific font for headers */
+      font-size: 30px;
+      line-height: 1.2;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-family: 'Google Sans', sans-serif; /* Specific font for headers */
+      font-size: 35px;
+      line-height: 1.2;
+      margin: 50px 0;
+      margin-top: 25px;
+      margin-bottom: 20px;
+    }
+
+    h4 {
+      font-family: 'Google Sans', sans-serif; /* Specific font for headers */
+      font-size: 25px;
+      line-height: 1.2;
+      margin-top: 25px;
+      margin-bottom: 20px;
+      max-width: 70%;
+      margin-left: auto; /* Centers the h4 block horizontally */
+      margin-right: auto; 
+      text-align: center; /* Centers the text horizontally */
+    }
+
+    h5 {
+      font-family: 'Google Sans', sans-serif; /* Specific font for headers */
+      font-size: 25px;
+      line-height: 1.2;
+      margin: 50px 0;
+      margin-top: 25px;
+      margin-bottom: 20px;
+    }
+
+    img {
+      max-width: 90%;
+      height: auto;
+      display: block;
+      margin: auto auto; /* Increase the top margin */
+    }
+
+    p {
+      font-size: 18px; /* Increase the font size */
+      margin: 10px 0;
+    }
+
+    psmall {
+      font-size: 12px; /* Increase the font size */
+      margin: 10px 0;
+      margin-bottom: 60px; /* Increase this value to add more space below the text */
+      color: grey; /* Set the color to grey */
+    }
+
+    .image-container {
+      display: flex;
+      justify-content: center; /* Align the images to the center */
+      gap: 10px; /* Adjust the space between the images */
+      width: 100%; /* Add this line */
+      text-decoration: none; /* Removes underline */
+    }
+
+    .image-item img {
+      max-width: 30px; /* Adjust the size of the images */
+      height: auto;
+    }
+
+    .image-title {
+      font-size: 18px; /* Adjust the font size */
+      text-align: center;
+      margin-top: 7px; /* Adjust the space above the text */
+      margin-bottom: 5px; /* Adjust the space below the text */
+      color: black;
+    }
+
+    .image-item {
+      opacity: 0.5; /* Add this line to set the transparency */
+    }
+
+    .image-item:hover {
+      opacity: 1; /* Add this line to set the opacity back to 100% on hover */
+    }
+
+    .image-container a {
+    text-decoration: none; 
+    }
+
+    .image-container a .image-title {
+      color:  black;
+    }
+
+    .image-container a:hover .image-title {
+      text-decoration: underline; 
+    }
+
+    .example-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* if you want the images centered */
+      height: auto;
+      max-width: 58%; /* Adjust this as needed to give space between images */
+      margin-left: auto; /* Centers the container horizontally */
+      margin-right: auto; /* Centers the container horizontally */  
+    }
+
+    .example-container2 {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* if you want the images centered */
+      height: auto;
+      max-width: 40%; /* Adjust this as needed to give space between images */
+      margin-left: auto; /* Centers the container horizontally */
+      margin-right: auto; /* Centers the container horizontally */
+      margin-top: -20pt; /* Centers the container horizontally */    
+    }
+    .example-row {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;  /* Ensure items are aligned in the center vertically if needed */
+      width: 80%; /* Adjust this as needed to give space between images */
+      margin: auto auto; /* Centers the row horizontally within its parent container */
+    }
+
+    .example-image {
+      max-width: 25%; /* Adjust this as needed to fit two images */
+      height: auto;
+      margin-right: 2px; /* Adds space to the right of each image */
+      margin-left: 2px; /* Adds space to the right of each image */
+    } 
+
+    .example-row-2 {
+      display: flex;
+      justify-content: space-around;
+      width: 64%; /* Adjust this as needed to give space between images */
+      margin-bottom: 20px; /* Space between rows */
+    }
+
+    .method-container {
+      height: auto;
+      max-width: 100%; /* Adjust this as needed to give space between images */
+      margin-left: auto; /* Centers the container horizontally */
+      margin-right: auto; /* Centers the container horizontally */  
+    }
+
+    .method-image {
+      max-width: 60%; /* Adjust this as needed */
+      height: auto;
+      margin-bottom: 20px; /* Add space between images */
+    }
+
+    .image-description {
+      text-align: justify;
+      max-width: 60%; /* Adjust as needed */
+      margin-top: 10px; /* Adjust as needed */
+      margin-left: auto; /* Centers the container horizontally */
+      margin-right: auto; /* Centers the container horizontally */  
+    }
+
+    .results-container {
+      display: flex;
+      flex-direction: column;
+      max-width: 50%; /* Adjust this value to your desired width */
+      margin: 0 auto; /* Center the container */
+    }
+
+    .table-image {
+      width: 40%;
+      height: auto;
+    }
+    
+    .table-image2 {
+      width: 50%;
+      height: auto;
+    }
+
+    .author-links a {
+      text-decoration: none;
+      color: black;
+    }
+  .institute {
+    margin-top: 0;
+    margin-bottom: -16px; /* Adjust this value as needed */
+  }
+
+  .limited-width {
+    width: 66%;
+    margin: auto; /* Centering the paragraph */
+  }
+</style>
+
+</style>
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <h1>CoordFlow</h1>
+    <br>
+    <h2>Coordinate Flow for Pixel-wise Neural
+      Video Representation</h2>
+    <p><strong>Accepted to the Data Compression Conference (DCC) 2025</strong></p>
+    <p class="author-links">
+      <a href="mailto:silver@campus.technion.ac.il">Daniel Silver<sup></sup><span style="font-size: 18px;"></span></a> &nbsp;&nbsp; 
+      <a href="mailto:ron@cs.technion.ac.il">Ron Kimmel<sup></sup></a>
+    </p>
+    <p>Technion - Israel Institute of Technology</p>
+    <br>
+    <br>
+    <div class="image-container">
+      <a href="https://arxiv.org/abs/2501.00975">
+        <div class="image-item">
+          <img src="arxiv.png" alt="Paper">
+          <p class="image-title">Paper</p>
+        </div>
+      </a>
+      <a href="https://github.com/Slivliver/CoordFlow">
+        <div class="image-item">
+          <img src="github-mark.png" alt="Code">
+          <p class="image-title">Code</p>
+        </div>
+      </a>
+    </div>
+  <br>
+  <!-- <h3>TL;DR</h3>
+  <h4>
+    By leveraging the distinct strengths of pixel-wise Implicit Neural Representations (INRs) for video compression, we introduce CoordFlow, a novel methodology that separates video into visually consistent layers processed by dedicated neural networks integrated with motion compensation. This approach not only enhances the compression efficacy but also enables features like unsupervised video segmentation, motion compensation, and stabilization. Our experiments demonstrate that CoordFlow greatly exceeds the performance of state-of-the-art pixelwise methods and matches leading frame-wise methods, establishing new benchmarks in video compression technology.
+  </h4>
+  <br> -->
+
+  <div class="video-container" style="width: 60%; max-width: 1440px; aspect-ratio: 16 / 9; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border-radius: 16px; overflow: hidden; background-color: #000; border: 4px solid #fff; margin: 0 auto;">
+    <video controls autoplay style="width: 100%; height: 100%; border-radius: inherit;">
+        <source src="ShakeNDry.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <h3>Abstract</h3>
+  <p class="limited-width">
+    In the field of video compression, the pursuit for better quality at lower bit rates remains a long-lasting goal.
+    Recent developments have demonstrated the potential of Implicit Neural Representation (INR) as a promising alternative to traditional transform-based methodologies.
+    Video INRs can be roughly divided into frame-wise and pixel-wise methods according to the structure the network outputs.
+    While the pixel-based methods are better for upsampling and parallelization, frame-wise methods demonstrated better performance.
+    We introduce CoordFlow, a novel pixel-wise INR for video compression.
+    It yields state-of-the-art results compared to other pixel-wise INRs and on-par performance compared to leading frame-wise techniques.
+    The method is based on the separation of the visual information into visually consistent layers, each represented by a dedicated network that compensates for the layer's motion.
+    When integrated, a byproduct is an unsupervised segmentation of video sequence.
+    Objects motion trajectories are implicitly utilized to compensate for visual-temporal redundancies.
+    Additionally, the proposed method provides inherent video upsampling, stabilization, inpainting, and denoising capabilities.  </p>
+  <br>
+  <img src="graph.png" alt="graph Image", style="width: 40%">
+  <!-- insert imaeg caption here -->
+  <p class="psmall">CoordFlow in comparison to other methods pixel-wise methods, NeRV, and h.265</p>
+  <br>
+
+  <h3>Method</h3>
+  <div class="method-container">
+    <br>
+    <!-- sub title "CoordFlow Layer" -->
+    <h4>CoordFlow Layer</h4>
+    <img class="method-image" src="flow_layer.png" alt="Method Image 1">
+    <p class="image-description">
+      The process initiates with the input pixel coordinates (x, y, t), where t undergoes positional encoding (PE) before being processed by the Flow
+      Network. This network computes a similarity transformation to realign the spatial coordinates (x, y),
+      counteracting the motion within the video sequence, and yielding a set of transformed coordinates
+      (x′, y′, t). These stabilized coordinates, after positional encoding, are then inputted into the Color
+      Network, which produces the color (RGB) and alpha (α) outputs for each pixel. The operation of the
+      Flow Network effectively creates a ’canonical space’, in which the temporal motion is neutralized,
+      allowing the Color Network to generate a consistent representation across time.
+    </p>
+    <div class="video-container" style="width: 60%; max-width: 1440px; aspect-ratio: 16 / 9; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border-radius: 16px; overflow: hidden; background-color: #000; border: 4px solid #fff; margin: 0 auto;">
+      <video controls autoplay style="width: 100%; height: 100%; border-radius: inherit;">
+          <source src="Latent Space.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+    </div>
+    <br>
+    <br>
+    <h4>CoordFlow Net</h4>
+    <img class="method-image" src="coord_flow.png" alt="Method Image 2">
+    <p class="image-description">
+      The input coordinates are passed through the CoordFlow layers in parallel, outputting RGB and alpha values. In this example there are only two layers, and
+      the RGB output of each layer can be seen in the middle, in addition to the softmax value of the alphas.
+      The softmax map acts similarly to an attention map, and we can see the background/foreground
+      segmentation. At the far right is the ground truth frame, next to the final output of the model.
+    </p>
+  </div>
+  <br><br>
+  <h3>Additional benefits</h3>
+  <!-- sub title "Unsupervised Segmentation" -->
+  <h4>Unsupervised Segmentation</h4>
+  <img class="method-image" src="segmentation.png" alt="Method Image 3">
+  <p class="image-description">
+    The CoordFlow model can be used to segment the video into different layers, each representing a different object. The model is trained in an unsupervised manner, and the layers are generated based on the motion of the objects in the video. The model can be used to segment the video into different layers, each representing a different object.
+  <br>
+  <!-- sub title "Video Stabilization" -->
+  <h4>Video Stabilization</h4>
+  <div class="video-container" style="width: 60%; max-width: 1440px; aspect-ratio: 16 / 9; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border-radius: 16px; overflow: hidden; background-color: #000; border: 4px solid #fff; margin: 0 auto;">
+    <video controls autoplay style="width: 100%; height: 100%; border-radius: inherit;">
+        <source src="Stabilization.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <br>
+  <!-- sub title "Inpainting" -->
+  <h4>Inpainting</h4>
+  <img class="method-image" src="inpainting.png" alt="Method Image 4">
+  <p class="image-description">
+    The CoordFlow model can be used to inpaint missing parts of the video. The model is trained to predict the color of each pixel based on the surrounding pixels, and can be used to fill in missing parts of the video.
+  </p>
+  <h4>Video Inpainting</h4>
+  <div class="video-container" style="width: 60%; max-width: 1440px; aspect-ratio: 16 / 9; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border-radius: 16px; overflow: hidden; background-color: #000; border: 4px solid #fff; margin: 0 auto;">
+    <video controls autoplay style="width: 100%; height: 100%; border-radius: inherit;">
+        <source src="bee_inpainting.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+  </div>
+  <br>
+  <!-- sub title "Denoising" -->
+  <h4>Denoising</h4>
+  <img class="method-image" src="denoise.png" alt="Method Image 5">
+  <p class="image-description">
+    The CoordFlow model can be used to denoise the video. The model is trained to predict the color of each pixel based on the surrounding pixels, and can be used to remove noise from the video.
+    The values in square 1 were multiplied by 4 in both images for better noise visualization.
+  </p>
+
+  <h4>Video Upasampling</h4>
+  <p class="image-description">
+    CoordFlow’s continuous input space allows dynamic sampling between ground truth pixel coordinates.
+    Thus, it is possible to upsample the video in the x, y axes for better resolution, and in the t axis for
+    frame interpolation to achieve higher frame rate.
+  </p>
+  <div class="video-container" style="width: 60%; max-width: 1440px; aspect-ratio: 16 / 9; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border-radius: 16px; overflow: hidden; background-color: #000; border: 4px solid #fff; margin: 0 auto;">
+    <video controls autoplay style="width: 100%; height: 100%; border-radius: inherit;">
+        <source src="upsampling.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+  </div>
+
+<div style="width: 55%; margin: 0 auto; text-align: left;">
+  <h3 style="font-size: 1.8em;">BibTeX</h3>
+  <pre style="background-color: #e6dddd; padding: 10px;"><code>@misc{silver2024coordflow,
+      title={CoordFlow: Coordinate Flow for Pixel-wise Neural Video Representation}, 
+      author={Daniel Silver and Ron Kimmel},
+      year={2024},
+      eprint={2501.00975},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}</code></pre>
+</div>
+<br><br><br><br><br><br><br><br>
+</div>
+</body>
+</html>
